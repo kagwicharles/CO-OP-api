@@ -7,18 +7,20 @@ import javax.net.ssl.SSLSession;
 
 import org.json.JSONObject;
 
-import auth.AuthToken;
+import auth.AuthAPI;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class AccountBalance {
+public class AccountBalanceAPI {
 
 	private Response response;
 
-	public AccountBalance() {
+	private final static String url = "https://openapi-sandbox.co-opbank.co.ke/Enquiry/AccountBalance/1.0.0/";
+
+	public AccountBalanceAPI() {
 
 	}
 
@@ -33,9 +35,8 @@ public class AccountBalance {
 		MediaType mediaType = MediaType.parse("application/json");
 		RequestBody body = RequestBody.create(mediaType, jsonRequestBody());
 
-		Request request = new Request.Builder()
-				.url("https://openapi-sandbox.co-opbank.co.ke/Enquiry/AccountBalance/1.0.0/").post(body)
-				.addHeader("Authorization", "Bearer " + new AuthToken().getAuth())
+		Request request = new Request.Builder().url(url).post(body)
+				.addHeader("Authorization", "Bearer " + new AuthAPI().getAuth())
 				.addHeader("content-type", "application/json").build();
 		try {
 			response = client.newCall(request).execute();

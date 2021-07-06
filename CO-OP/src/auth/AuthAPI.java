@@ -13,11 +13,11 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class AuthToken {
+public class AuthAPI {
 
-	private final String url = "https://openapi-sandbox.co-opbank.co.ke/token?grant_type=client_credentials";
+	private final static String url = "https://openapi-sandbox.co-opbank.co.ke/token?grant_type=client_credentials";
 
-	public AuthToken() {
+	public AuthAPI() {
 
 	}
 

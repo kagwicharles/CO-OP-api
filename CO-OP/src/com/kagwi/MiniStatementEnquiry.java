@@ -5,7 +5,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import MiniStatement.MiniStatement;
+import ministatement.MiniStatementAPI;
 
 @Path("/MiniStatement")
 public class MiniStatementEnquiry {
@@ -19,7 +19,7 @@ public class MiniStatementEnquiry {
 	@Path("/getMiniStatement")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String getAccountBalance() {
-		String balance_string = new MiniStatement().getMiniStatement();
+		String balance_string = new MiniStatementAPI().getMiniStatement();
 		if (balance_string != "")
 			return balance_string;
 		return "Empty Response";
