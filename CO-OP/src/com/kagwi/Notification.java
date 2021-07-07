@@ -1,9 +1,12 @@
 package com.kagwi;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import org.json.JSONObject;
 
 import mail.MailAPI;
 
@@ -18,8 +21,17 @@ public class Notification {
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/getNotification")
-	public String getNotification() {
-		new MailAPI().sendMail();
+	@Consumes(MediaType.APPLICATION_JSON)
+	public String getNotification(String json_payload) {
+		JSONObject jsonObj = new JSONObject(json_payload);
+		String accountNo = jsonObj.get("AccountNumber").toString();
+		String amount = jsonObj.get("Amount").toString();
+		String eventType = jsonObj.get("EventType").toString();
+		String currency = jsonObj.get("Currency").toString();
+		String narration = jsonObj.get("Narration").toString();
+
+		new MailAPI().sendMail("Hello, Confirmed " + eventType + " " + amount + currency + " on account Number: "
+				+ accountNo + " for " + narration);
 		return "Notification sent...";
 	}
 

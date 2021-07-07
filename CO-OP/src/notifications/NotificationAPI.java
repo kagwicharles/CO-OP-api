@@ -36,7 +36,7 @@ public class NotificationAPI {
 
 		Request request = new Request.Builder().url(url).post(body)
 				.addHeader("Authorization", "Bearer " + new AuthAPI().getAuth())
-				.addHeader("NotificationEndpoint", "http://localhost:8080/CO-OP/coop/Notify/getNotification")
+				.addHeader("NotificationEndpoint", "http://f4c5d8a3da3f.ngrok.io/CO-OP/coop/Notify/getNotification")
 				.addHeader("content-type", "application/json").build();
 		try {
 			response = client.newCall(request).execute();
@@ -50,7 +50,7 @@ public class NotificationAPI {
 	public String jsonRequestBody() {
 
 		JSONObject object = new JSONObject();
-		object.put("MessageReference", "93C4EEB126E056B6E05400144FF97BA9");
+		object.put("MessageReference", "40ca18c6765086089a1");
 		object.put("MessageDateTime", "2021-07-06T12:42:11.990Z");
 		object.put("ServiceName", "string");
 		object.put("NotificationCode", "string");

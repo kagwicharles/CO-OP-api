@@ -11,7 +11,7 @@ public class MailAPI {
 	public MailAPI() {
 	}
 
-	public void sendMail() {
+	public void sendMail(String json_payload) {
 
 		final String username = "CKAGWI8@GMAIL.COM";
 		final String password = "theshkagwi@22";
@@ -35,8 +35,7 @@ public class MailAPI {
 			message.setFrom(new InternetAddress(username));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("THEURICH@UEAB.AC.KE"));
 			message.setSubject("CO-OP ACCOUNT ACTIVITY");
-			message.setText("test test test");
-
+			message.setText(json_payload);
 			Transport.send(message);
 
 			System.out.println("Done");
