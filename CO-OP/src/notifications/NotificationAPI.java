@@ -36,7 +36,7 @@ public class NotificationAPI {
 
 		Request request = new Request.Builder().url(url).post(body)
 				.addHeader("Authorization", "Bearer " + new AuthAPI().getAuth())
-				.addHeader("NotificationEndpoint", "http://f4c5d8a3da3f.ngrok.io/CO-OP/coop/Notify/getNotification")
+				.addHeader("NotificationEndpoint", "https://coop-bankapi.herokuapp.com/coop/Notify/getNotification")
 				.addHeader("content-type", "application/json").build();
 		try {
 			response = client.newCall(request).execute();
