@@ -8,7 +8,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.json.JSONObject;
 
-import mail.MailAPI;
+import twilio.TwilioAPI;
 
 @Path("/Notify")
 public class Notification {
@@ -30,8 +30,7 @@ public class Notification {
 		String currency = jsonObj.get("Currency").toString();
 		String narration = jsonObj.get("Narration").toString();
 
-		new MailAPI().sendMail("Hello, Confirmed " + eventType + " " + amount + currency + " on account Number: "
-				+ accountNo + " for " + narration);
+		new TwilioAPI().sendMessage(eventType, amount, currency, accountNo, narration);
 		return "Notification sent...";
 	}
 
