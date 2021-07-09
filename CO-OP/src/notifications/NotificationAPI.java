@@ -24,6 +24,7 @@ public class NotificationAPI {
 	}
 
 	public String sendNotificationSim() {
+
 		String jsonString = "";
 		OkHttpClient client = new OkHttpClient().newBuilder().hostnameVerifier(new HostnameVerifier() {
 			@Override
@@ -36,8 +37,9 @@ public class NotificationAPI {
 
 		Request request = new Request.Builder().url(url).post(body)
 				.addHeader("Authorization", "Bearer " + new AuthAPI().getAuth())
-				.addHeader("NotificationEndpoint", "https://coop-bankapi.herokuapp.com/coop/Notify/getNotification")
+				.addHeader("NotificationEndpoint", "http://e847902dffcc.ngrok.io/CO-OP/coop/Notify/getNotification")
 				.addHeader("content-type", "application/json").build();
+
 		try {
 			response = client.newCall(request).execute();
 			jsonString = response.body().string();

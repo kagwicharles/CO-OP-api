@@ -19,7 +19,7 @@ public class RequestNotification {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/askNotification")
 	public String getNotification() {
-		String res = new NotificationAPI().sendNotificationSim();
-		return res;
+		new NotificationAPI().sendNotificationSim();
+		return "Notification requested";
 	}
 }
