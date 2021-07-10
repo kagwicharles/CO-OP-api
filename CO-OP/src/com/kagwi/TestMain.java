@@ -1,7 +1,7 @@
 package com.kagwi;
 
-import mail.MailAPI;
-import notifications.NotificationAPI;
+import messaging.MailAPI;
+import account.NotificationAPI;
 
 public class TestMain {
 

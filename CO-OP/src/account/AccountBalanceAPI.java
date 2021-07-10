@@ -1,4 +1,4 @@
-package account_balance;
+package account;
 
 import java.io.IOException;
 

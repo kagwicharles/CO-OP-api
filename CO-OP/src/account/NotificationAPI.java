@@ -1,4 +1,4 @@
-package notifications;
+package account;
 
 import java.io.IOException;
 
@@ -37,7 +37,7 @@ public class NotificationAPI {
 
 		Request request = new Request.Builder().url(url).post(body)
 				.addHeader("Authorization", "Bearer " + new AuthAPI().getAuth())
-				.addHeader("NotificationEndpoint", "http://e847902dffcc.ngrok.io/CO-OP/coop/Notify/getNotification")
+				.addHeader("NotificationEndpoint", "https://4148191890b7.ngrok.io/CO-OP/Notify/getNotification")
 				.addHeader("content-type", "application/json").build();
 
 		try {
@@ -49,6 +49,7 @@ public class NotificationAPI {
 		return jsonString;
 	}
 
+	@SuppressWarnings("unchecked")
 	public String jsonRequestBody() {
 
 		JSONObject object = new JSONObject();

@@ -1,4 +1,4 @@
-package twilio;
+package messaging;
 
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
@@ -10,7 +10,7 @@ public class TwilioAPI {
 	}
 
 	public static final String ACCOUNT_SID = "AC02d145c6ee546685079a8dcbcba665f5";
-	public static final String AUTH_TOKEN = "978906b854b0952615d877d9beb478bc";
+	public static final String AUTH_TOKEN = "";
 
 	public void sendMessage(String eventType, String amount, String currency, String accountNo, String narration) {
 

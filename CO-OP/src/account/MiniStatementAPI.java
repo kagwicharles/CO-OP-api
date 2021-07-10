@@ -1,4 +1,4 @@
-package ministatement;
+package account;
 
 import java.io.IOException;
 

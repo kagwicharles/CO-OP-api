@@ -8,7 +8,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.json.JSONObject;
 
-import twilio.TwilioAPI;
+import messaging.TwilioAPI;
 
 @Path("/Notify")
 public class Notification {

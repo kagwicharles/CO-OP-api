@@ -1,4 +1,4 @@
-package mail;
+package messaging;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
