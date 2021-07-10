@@ -14,7 +14,7 @@ public class MailAPI {
 	public void sendMail(String json_payload) {
 
 		final String username = "CKAGWI8@GMAIL.COM"; // your email goes here
-		final String password = "theshkagwi@22"; // your pass here
+		final String password = ""; // your pass here
 
 		Properties prop = new Properties();
 		prop.put("mail.smtp.host", "smtp.gmail.com");
