@@ -37,7 +37,7 @@ public class NotificationAPI {
 
 		Request request = new Request.Builder().url(url).post(body)
 				.addHeader("Authorization", "Bearer " + new AuthAPI().getAuth())
-				.addHeader("NotificationEndpoint", "https://4148191890b7.ngrok.io/CO-OP/Notify/getNotification")
+				.addHeader("NotificationEndpoint", "http://d0d3834d0490.ngrok.io/CO-OP/Notify/getNotification")
 				.addHeader("content-type", "application/json").build();
 
 		try {
